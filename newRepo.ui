@@ -190,7 +190,7 @@ background-color: transparent;
            <item row="0" column="1">
             <widget class="QStackedWidget" name="stackedWidget">
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="page_5">
               <widget class="QLCDNumber" name="TrialTimerLCD">
@@ -322,54 +322,6 @@ background-color: transparent;
                 <rect>
                  <x>210</x>
                  <y>120</y>
-                 <width>311</width>
-                 <height>16</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color: rgb(50, 175, 138);</string>
-               </property>
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-              </widget>
-              <widget class="QSlider" name="pitch_kp_slider">
-               <property name="geometry">
-                <rect>
-                 <x>210</x>
-                 <y>180</y>
-                 <width>311</width>
-                 <height>16</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color: rgb(50, 175, 138);</string>
-               </property>
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-              </widget>
-              <widget class="QSlider" name="pitch_ki_slider">
-               <property name="geometry">
-                <rect>
-                 <x>210</x>
-                 <y>240</y>
-                 <width>311</width>
-                 <height>16</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color: rgb(50, 175, 138);</string>
-               </property>
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-              </widget>
-              <widget class="QSlider" name="pitch_kd_slider">
-               <property name="geometry">
-                <rect>
-                 <x>210</x>
-                 <y>300</y>
                  <width>311</width>
                  <height>16</height>
                 </rect>
@@ -599,7 +551,7 @@ background-color: transparent;
                 </rect>
                </property>
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;Ubuntu&quot;;</string>
+                <string notr="true">font: 13pt &quot;Ubuntu&quot;;</string>
                </property>
                <property name="text">
                 <string>Cancel Yaw</string>
@@ -615,7 +567,7 @@ background-color: transparent;
                 </rect>
                </property>
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;Ubuntu&quot;;</string>
+                <string notr="true">font: 13pt &quot;Ubuntu&quot;;</string>
                </property>
                <property name="text">
                 <string>Cancel Pitch</string>
@@ -631,7 +583,7 @@ background-color: transparent;
                 </rect>
                </property>
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;Ubuntu&quot;;</string>
+                <string notr="true">font: 13pt &quot;Ubuntu&quot;;</string>
                </property>
                <property name="text">
                 <string>Return Yaw</string>
@@ -647,10 +599,58 @@ background-color: transparent;
                 </rect>
                </property>
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;Ubuntu&quot;;</string>
+                <string notr="true">font: 13pt &quot;Ubuntu&quot;;</string>
                </property>
                <property name="text">
                 <string>Return Pitch</string>
+               </property>
+              </widget>
+              <widget class="QSlider" name="pitch_kp_slider">
+               <property name="geometry">
+                <rect>
+                 <x>210</x>
+                 <y>180</y>
+                 <width>311</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(50, 175, 138);</string>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+              <widget class="QSlider" name="pitch_ki_slider">
+               <property name="geometry">
+                <rect>
+                 <x>210</x>
+                 <y>240</y>
+                 <width>311</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(50, 175, 138);</string>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+              <widget class="QSlider" name="pitch_kd_slider">
+               <property name="geometry">
+                <rect>
+                 <x>210</x>
+                 <y>300</y>
+                 <width>311</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(50, 175, 138);</string>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
                </property>
               </widget>
              </widget>
