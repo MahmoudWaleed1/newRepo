@@ -1,0 +1,8 @@
+prefix=/home/ahmedyahia/robot_ws/devel
+
+Name: urdf_pkg
+Description: Description of urdf_pkg
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
