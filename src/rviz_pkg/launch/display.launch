@@ -6,7 +6,6 @@
     name="change_yaw_node" pkg="rviz_pkg" type="main.py" output = "screen">
 
 </node>
-
   <node
     name="rviz"
     pkg="rviz"

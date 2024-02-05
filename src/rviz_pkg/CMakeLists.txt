@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(rviz_pkg)
 
 find_package(catkin REQUIRED)
-
+QT += core gui
 catkin_package()
 
 find_package(roslaunch)

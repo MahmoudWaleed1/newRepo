@@ -34,11 +34,11 @@ def change_yaw_angle():
         yaw_angle_radians = radians(yaw_angle_degrees)
         
                # Set the translation (assuming no translation)
-        translation = (1, 0, 0)
+        translation = (0, 0, 0)
         print(z)
 
         # Set the orientation to achieve the desired yaw angle
-        quaternion = tf.transformations.quaternion_from_euler(yaw_angle_radians, yaw_angle_radians,0)
+        quaternion = tf.transformations.quaternion_from_euler(0,yaw_angle_radians ,yaw_angle_radians)
 
         # Publish the TransformStamped message
         tf_broadcaster.sendTransform(translation, quaternion, rospy.Time.now(), child_frame, fixed_frame)
