@@ -124,16 +124,6 @@ background-color: transparent;
       </widget>
       <widget class="QWidget" name="page_2">
        <layout class="QGridLayout" name="gridLayout">
-        <item row="1" column="2">
-         <widget class="QFrame" name="frame4">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="2">
          <widget class="QFrame" name="frame3">
           <property name="minimumSize">
@@ -399,6 +389,192 @@ background-color: transparent;
             <width>550</width>
             <height>800</height>
            </size>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" rowspan="2">
+         <widget class="QFrame" name="frame2">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <widget class="QComboBox" name="mission">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>50</y>
+             <width>271</width>
+             <height>25</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"> background-color: rgb(105,117,115);</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_3">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>20</y>
+             <width>181</width>
+             <height>71</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16t &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Mission List</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_4">
+           <property name="geometry">
+            <rect>
+             <x>150</x>
+             <y>100</y>
+             <width>221</width>
+             <height>71</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Mission Timer</string>
+           </property>
+          </widget>
+          <widget class="QLCDNumber" name="missionTimerLCD">
+           <property name="geometry">
+            <rect>
+             <x>150</x>
+             <y>170</y>
+             <width>141</width>
+             <height>41</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="startMission">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>240</y>
+             <width>151</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>START</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="stopMission">
+           <property name="geometry">
+            <rect>
+             <x>200</x>
+             <y>240</y>
+             <width>151</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>STOP</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="resetMission">
+           <property name="geometry">
+            <rect>
+             <x>360</x>
+             <y>240</y>
+             <width>151</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>RESET</string>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item row="2" column="2" rowspan="2">
+         <widget class="QFrame" name="frame5">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="1" column="0">
+            <widget class="QPushButton" name="depthButton">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>90</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>390</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 20pt &quot;Ubuntu&quot;;</string>
+             </property>
+             <property name="text">
+              <string>DEPTH GRAPH</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QPushButton" name="floatButton">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>90</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>390</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 20pt &quot;Ubuntu&quot;;</string>
+             </property>
+             <property name="text">
+              <string>FLOAT GRAPH</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Maximum</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="2">
+         <widget class="QWidget" name="rviz_widget" native="true">
+          <property name="styleSheet">
+           <string notr="true">#rviz_widget{
+border-top: 3px solid rgb(79, 192, 208);
+border-bottom: 3px solid rgb(79, 192, 208);
+border-right: 3px solid rgb(79, 192, 208);
+border-left: 3px solid rgb(79, 192, 208);
+border-radius:20px;
+}</string>
           </property>
          </widget>
         </item>
@@ -895,196 +1071,24 @@ background-color: transparent;
           </layout>
          </widget>
         </item>
-        <item row="2" column="0" rowspan="2">
-         <widget class="QFrame" name="frame2">
+        <item row="1" column="2">
+         <widget class="QFrame" name="frame4">
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
           </property>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
           </property>
-          <widget class="QComboBox" name="mission">
-           <property name="geometry">
-            <rect>
-             <x>210</x>
-             <y>50</y>
-             <width>271</width>
-             <height>25</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"> background-color: rgb(105,117,115);</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_3">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>20</y>
-             <width>181</width>
-             <height>71</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">font: 16t &quot;Ubuntu&quot;;</string>
-           </property>
-           <property name="text">
-            <string>Mission List</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_4">
-           <property name="geometry">
-            <rect>
-             <x>150</x>
-             <y>100</y>
-             <width>221</width>
-             <height>71</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Mission Timer</string>
-           </property>
-          </widget>
-          <widget class="QLCDNumber" name="missionTimerLCD">
-           <property name="geometry">
-            <rect>
-             <x>150</x>
-             <y>170</y>
-             <width>141</width>
-             <height>41</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="startMission">
-           <property name="geometry">
-            <rect>
-             <x>40</x>
-             <y>240</y>
-             <width>151</width>
-             <height>31</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>START</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="stopMission">
-           <property name="geometry">
-            <rect>
-             <x>200</x>
-             <y>240</y>
-             <width>151</width>
-             <height>31</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>STOP</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="resetMission">
-           <property name="geometry">
-            <rect>
-             <x>360</x>
-             <y>240</y>
-             <width>151</width>
-             <height>31</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>RESET</string>
-           </property>
-          </widget>
          </widget>
         </item>
         <item row="2" column="1" rowspan="2">
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="logo_label">
+          <property name="styleSheet">
+           <string notr="true">background-color :rgb(0, 0, 0) ;
+image:url(:/logo/logo.png)</string>
+          </property>
           <property name="text">
            <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="2" rowspan="2">
-         <widget class="QFrame" name="frame5">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_4">
-           <item row="1" column="0">
-            <widget class="QPushButton" name="depthButton">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>90</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>390</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">font: 20pt &quot;Ubuntu&quot;;</string>
-             </property>
-             <property name="text">
-              <string>DEPTH GRAPH</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QPushButton" name="floatButton">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>90</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>390</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">font: 20pt &quot;Ubuntu&quot;;</string>
-             </property>
-             <property name="text">
-              <string>FLOAT GRAPH</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <spacer name="verticalSpacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Maximum</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>0</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="1" rowspan="2">
-         <widget class="QWidget" name="rviz_widget" native="true">
-          <property name="styleSheet">
-           <string notr="true">#rviz_widget{
-border-top: 3px solid rgb(79, 192, 208);
-border-bottom: 3px solid rgb(79, 192, 208);
-border-right: 3px solid rgb(79, 192, 208);
-border-left: 3px solid rgb(79, 192, 208);
-border-radius:20px;
-}</string>
           </property>
          </widget>
         </item>
@@ -1125,6 +1129,8 @@ border-radius:20px;
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="logo.qrc"/>
+ </resources>
  <connections/>
 </ui>

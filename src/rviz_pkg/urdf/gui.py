@@ -1,57 +1,24 @@
 from PyQt5 import QtWidgets, uic ,QtGui
-from PyQt5.QtCore import QTimer, QTime
+from PyQt5.QtCore import QTimer, QTime ,QResource 
 import datetime
 import os
+from PyQt5.QtGui import QPixmap
 from roslib import*
 from rviz import*
 import sys
 ##########################YOU SHOULD MODIFY THE PATH IN model_confih in config file#############################
 yawPid_para = [ 6.6, 10 , 1.09]
 pitchPid_para = [4.2 , 6.4 , 0.68]
-
-
-
-
+##################### ( pyrcc5 /home/ahmedyahia/robot_ws/src/rviz_pkg/urdf/logo.qrc -o logo_rc.py) to import logo run thise in terminal #############################
+import logo_rc
 #!/usr/bin/env python3
 
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton ,QLabel
 
 from rviz import bindings as rviz
 
-class RVizWidget(QWidget):
-    def __init__(self, config_file):
-        super(RVizWidget, self).__init__()
-
-        self.frame = rviz.VisualizationFrame()
-        self.frame.setSplashPath("")
-        self.frame.initialize()
-
-        reader = rviz.YamlConfigReader()
-        config = rviz.Config()
-        reader.readFile(config, config_file)
-        self.frame.load(config)
-
-        self.frame.setMenuBar(None)
-        self.frame.setStatusBar(None)
-        self.frame.setHideButtonVisibility(False)
-
-        self.manager = self.frame.getManager()
-        self.grid_display = self.manager.getRootDisplayGroup().getDisplayAt(0)
-
-        layout = QVBoxLayout()
-        layout.addWidget(self.frame)
-
-        h_layout = QHBoxLayout()
-        layout.addLayout(h_layout)
-
-        self.setLayout(layout)
-
-    def onThicknessSliderChanged(self, new_value):
-        if self.grid_display is not None:
-            self.grid_display.subProp("Line Style").subProp("Line Width").setValue(new_value / 1000.0)
-
-
+from MyViz import *
 
 class Gui(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
@@ -88,13 +55,13 @@ class Gui(QtWidgets.QMainWindow):
         self.depthReturnButton.clicked.connect(lambda: self.stackedWidget2.setCurrentIndex(1))
         self.rviz_widget = QWidget(self.page_2)
         self.rviz_widget.setObjectName(u"rviz_widget")
-
+    #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$    MODEFY THE PATH $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
         
         self.rviz_widget = RVizWidget("/home/ahmedyahia/robot_ws/src/rviz_pkg/config/model_config.rviz")
                 
         self.gridLayout.addWidget(self.rviz_widget, 0, 1, 2, 1)
 
-
+    #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%%%%%%%%%%%%%%%%%%%$$$$$$$$$$$$$$$$$$$$$$$$$$$%%%%%%%%%%%%%%%%%%%%%
 
 
         self.yawFlag = False
@@ -289,8 +256,7 @@ class Gui(QtWidgets.QMainWindow):
         self.pitchFlag = False
         self.pitchFlag2 = True
 app = QtWidgets.QApplication([])
-rviz_widget = RVizWidget("/home/ahmedyahia/robot_ws/src/rviz_pkg/config/model_config.rviz")
-rviz_widget.resize(50, 50)
+
 win = Gui()
 win.showFullScreen()
 app.exec()

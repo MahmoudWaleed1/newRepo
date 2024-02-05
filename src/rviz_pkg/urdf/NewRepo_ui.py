@@ -12,6 +12,7 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
+import logo_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -106,13 +107,6 @@ class Ui_MainWindow(object):
         self.page_2.setObjectName(u"page_2")
         self.gridLayout = QGridLayout(self.page_2)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.frame4 = QFrame(self.page_2)
-        self.frame4.setObjectName(u"frame4")
-        self.frame4.setFrameShape(QFrame.StyledPanel)
-        self.frame4.setFrameShadow(QFrame.Raised)
-
-        self.gridLayout.addWidget(self.frame4, 1, 2, 1, 1)
-
         self.frame3 = QFrame(self.page_2)
         self.frame3.setObjectName(u"frame3")
         self.frame3.setMinimumSize(QSize(0, 380))
@@ -247,6 +241,77 @@ class Ui_MainWindow(object):
         self.widget.setMaximumSize(QSize(550, 800))
 
         self.gridLayout.addWidget(self.widget, 0, 0, 1, 1)
+
+        self.frame2 = QFrame(self.page_2)
+        self.frame2.setObjectName(u"frame2")
+        self.frame2.setFrameShape(QFrame.StyledPanel)
+        self.frame2.setFrameShadow(QFrame.Raised)
+        self.mission = QComboBox(self.frame2)
+        self.mission.setObjectName(u"mission")
+        self.mission.setGeometry(QRect(210, 50, 271, 25))
+        self.mission.setStyleSheet(u" background-color: rgb(105,117,115);")
+        self.label_3 = QLabel(self.frame2)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(20, 20, 181, 71))
+        self.label_3.setStyleSheet(u"font: 16t \"Ubuntu\";")
+        self.label_4 = QLabel(self.frame2)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(150, 100, 221, 71))
+        self.missionTimerLCD = QLCDNumber(self.frame2)
+        self.missionTimerLCD.setObjectName(u"missionTimerLCD")
+        self.missionTimerLCD.setGeometry(QRect(150, 170, 141, 41))
+        self.startMission = QPushButton(self.frame2)
+        self.startMission.setObjectName(u"startMission")
+        self.startMission.setGeometry(QRect(40, 240, 151, 31))
+        self.stopMission = QPushButton(self.frame2)
+        self.stopMission.setObjectName(u"stopMission")
+        self.stopMission.setGeometry(QRect(200, 240, 151, 31))
+        self.resetMission = QPushButton(self.frame2)
+        self.resetMission.setObjectName(u"resetMission")
+        self.resetMission.setGeometry(QRect(360, 240, 151, 31))
+
+        self.gridLayout.addWidget(self.frame2, 2, 0, 2, 1)
+
+        self.frame5 = QFrame(self.page_2)
+        self.frame5.setObjectName(u"frame5")
+        self.frame5.setFrameShape(QFrame.StyledPanel)
+        self.frame5.setFrameShadow(QFrame.Raised)
+        self.gridLayout_4 = QGridLayout(self.frame5)
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.depthButton = QPushButton(self.frame5)
+        self.depthButton.setObjectName(u"depthButton")
+        self.depthButton.setMinimumSize(QSize(0, 90))
+        self.depthButton.setMaximumSize(QSize(390, 16777215))
+        self.depthButton.setStyleSheet(u"font: 20pt \"Ubuntu\";")
+
+        self.gridLayout_4.addWidget(self.depthButton, 1, 0, 1, 1)
+
+        self.floatButton = QPushButton(self.frame5)
+        self.floatButton.setObjectName(u"floatButton")
+        self.floatButton.setMinimumSize(QSize(0, 90))
+        self.floatButton.setMaximumSize(QSize(390, 16777215))
+        self.floatButton.setStyleSheet(u"font: 20pt \"Ubuntu\";")
+
+        self.gridLayout_4.addWidget(self.floatButton, 0, 0, 1, 1)
+
+        self.verticalSpacer = QSpacerItem(20, 0, QSizePolicy.Minimum, QSizePolicy.Maximum)
+
+        self.gridLayout_4.addItem(self.verticalSpacer, 2, 0, 1, 1)
+
+
+        self.gridLayout.addWidget(self.frame5, 2, 2, 2, 1)
+
+        self.rviz_widget = QWidget(self.page_2)
+        self.rviz_widget.setObjectName(u"rviz_widget")
+        self.rviz_widget.setStyleSheet(u"#rviz_widget{\n"
+"border-top: 3px solid rgb(79, 192, 208);\n"
+"border-bottom: 3px solid rgb(79, 192, 208);\n"
+"border-right: 3px solid rgb(79, 192, 208);\n"
+"border-left: 3px solid rgb(79, 192, 208);\n"
+"border-radius:20px;\n"
+"}")
+
+        self.gridLayout.addWidget(self.rviz_widget, 0, 1, 2, 1)
 
         self.frame = QFrame(self.page_2)
         self.frame.setObjectName(u"frame")
@@ -391,81 +456,19 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.frame, 1, 0, 1, 1)
 
-        self.frame2 = QFrame(self.page_2)
-        self.frame2.setObjectName(u"frame2")
-        self.frame2.setFrameShape(QFrame.StyledPanel)
-        self.frame2.setFrameShadow(QFrame.Raised)
-        self.mission = QComboBox(self.frame2)
-        self.mission.setObjectName(u"mission")
-        self.mission.setGeometry(QRect(210, 50, 271, 25))
-        self.mission.setStyleSheet(u" background-color: rgb(105,117,115);")
-        self.label_3 = QLabel(self.frame2)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(20, 20, 181, 71))
-        self.label_3.setStyleSheet(u"font: 16t \"Ubuntu\";")
-        self.label_4 = QLabel(self.frame2)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setGeometry(QRect(150, 100, 221, 71))
-        self.missionTimerLCD = QLCDNumber(self.frame2)
-        self.missionTimerLCD.setObjectName(u"missionTimerLCD")
-        self.missionTimerLCD.setGeometry(QRect(150, 170, 141, 41))
-        self.startMission = QPushButton(self.frame2)
-        self.startMission.setObjectName(u"startMission")
-        self.startMission.setGeometry(QRect(40, 240, 151, 31))
-        self.stopMission = QPushButton(self.frame2)
-        self.stopMission.setObjectName(u"stopMission")
-        self.stopMission.setGeometry(QRect(200, 240, 151, 31))
-        self.resetMission = QPushButton(self.frame2)
-        self.resetMission.setObjectName(u"resetMission")
-        self.resetMission.setGeometry(QRect(360, 240, 151, 31))
+        self.frame4 = QFrame(self.page_2)
+        self.frame4.setObjectName(u"frame4")
+        self.frame4.setFrameShape(QFrame.StyledPanel)
+        self.frame4.setFrameShadow(QFrame.Raised)
 
-        self.gridLayout.addWidget(self.frame2, 2, 0, 2, 1)
+        self.gridLayout.addWidget(self.frame4, 1, 2, 1, 1)
 
-        self.label = QLabel(self.page_2)
-        self.label.setObjectName(u"label")
+        self.logo_label = QLabel(self.page_2)
+        self.logo_label.setObjectName(u"logo_label")
+        self.logo_label.setStyleSheet(u"background-color :rgb(0, 0, 0) ;\n"
+"image:url(:/logo/logo.png)")
 
-        self.gridLayout.addWidget(self.label, 2, 1, 2, 1)
-
-        self.frame5 = QFrame(self.page_2)
-        self.frame5.setObjectName(u"frame5")
-        self.frame5.setFrameShape(QFrame.StyledPanel)
-        self.frame5.setFrameShadow(QFrame.Raised)
-        self.gridLayout_4 = QGridLayout(self.frame5)
-        self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.depthButton = QPushButton(self.frame5)
-        self.depthButton.setObjectName(u"depthButton")
-        self.depthButton.setMinimumSize(QSize(0, 90))
-        self.depthButton.setMaximumSize(QSize(390, 16777215))
-        self.depthButton.setStyleSheet(u"font: 20pt \"Ubuntu\";")
-
-        self.gridLayout_4.addWidget(self.depthButton, 1, 0, 1, 1)
-
-        self.floatButton = QPushButton(self.frame5)
-        self.floatButton.setObjectName(u"floatButton")
-        self.floatButton.setMinimumSize(QSize(0, 90))
-        self.floatButton.setMaximumSize(QSize(390, 16777215))
-        self.floatButton.setStyleSheet(u"font: 20pt \"Ubuntu\";")
-
-        self.gridLayout_4.addWidget(self.floatButton, 0, 0, 1, 1)
-
-        self.verticalSpacer = QSpacerItem(20, 0, QSizePolicy.Minimum, QSizePolicy.Maximum)
-
-        self.gridLayout_4.addItem(self.verticalSpacer, 2, 0, 1, 1)
-
-
-        self.gridLayout.addWidget(self.frame5, 2, 2, 2, 1)
-
-        self.rviz_widget = QWidget(self.page_2)
-        self.rviz_widget.setObjectName(u"rviz_widget")
-        self.rviz_widget.setStyleSheet(u"#rviz_widget{\n"
-"border-top: 3px solid rgb(79, 192, 208);\n"
-"border-bottom: 3px solid rgb(79, 192, 208);\n"
-"border-right: 3px solid rgb(79, 192, 208);\n"
-"border-left: 3px solid rgb(79, 192, 208);\n"
-"border-radius:20px;\n"
-"}")
-
-        self.gridLayout.addWidget(self.rviz_widget, 0, 1, 2, 1)
+        self.gridLayout.addWidget(self.logo_label, 2, 1, 2, 1)
 
         self.stackedWidget2.addWidget(self.page_2)
         self.page_3 = QWidget()
@@ -510,6 +513,13 @@ class Ui_MainWindow(object):
         self.AccelerometerLabel.setText(QCoreApplication.translate("MainWindow", u"3", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"MaxSpeed", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Accelerometer", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Mission List", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Mission Timer", None))
+        self.startMission.setText(QCoreApplication.translate("MainWindow", u"START", None))
+        self.stopMission.setText(QCoreApplication.translate("MainWindow", u"STOP", None))
+        self.resetMission.setText(QCoreApplication.translate("MainWindow", u"RESET", None))
+        self.depthButton.setText(QCoreApplication.translate("MainWindow", u"DEPTH GRAPH", None))
+        self.floatButton.setText(QCoreApplication.translate("MainWindow", u"FLOAT GRAPH", None))
         self.startTrial.setText(QCoreApplication.translate("MainWindow", u"START", None))
         self.stopTrial.setText(QCoreApplication.translate("MainWindow", u"STOP", None))
         self.resetTrial.setText(QCoreApplication.translate("MainWindow", u"RESET", None))
@@ -532,14 +542,7 @@ class Ui_MainWindow(object):
         self.cancelPitch.setText(QCoreApplication.translate("MainWindow", u"Cancel Pitch", None))
         self.returnYaw.setText(QCoreApplication.translate("MainWindow", u"Return Yaw", None))
         self.returnPitch.setText(QCoreApplication.translate("MainWindow", u"Return Pitch", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Mission List", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Mission Timer", None))
-        self.startMission.setText(QCoreApplication.translate("MainWindow", u"START", None))
-        self.stopMission.setText(QCoreApplication.translate("MainWindow", u"STOP", None))
-        self.resetMission.setText(QCoreApplication.translate("MainWindow", u"RESET", None))
-        self.label.setText("")
-        self.depthButton.setText(QCoreApplication.translate("MainWindow", u"DEPTH GRAPH", None))
-        self.floatButton.setText(QCoreApplication.translate("MainWindow", u"FLOAT GRAPH", None))
+        self.logo_label.setText("")
         self.depthReturnButton.setText(QCoreApplication.translate("MainWindow", u"RETURN", None))
     # retranslateUi
 
